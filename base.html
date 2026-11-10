@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>S Portfolio | Developer</title>
+    <link rel="icon" type="image/png" href="images/slayer.jpg">
+    <!-- Tailwind CSS v4 CDN -->
+    <script src="https://unpkg.com/@tailwindcss/browser@4"></script>
+    <!-- AOS Animations CSS -->
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <!-- Google Font: Handwritten style for Polaroid caption -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@600;700&display=swap" rel="stylesheet">
+    <!-- Custom CSS Modules -->
+    <link rel="stylesheet" href="css/web.css">
+    <link rel="stylesheet" href="css/interact.css">
+</head>
+<body class="bg-slate-950 text-slate-100 font-sans antialiased selection:bg-indigo-500 selection:text-white relative overflow-x-hidden">
+
+    <!-- Ambient Gradient Mesh -->
+    <div class="bg-orb orb-top"></div>
+    <div class="bg-orb orb-bottom"></div>
+
+    <!-- Navigation Bar -->
+    <nav class="fixed top-0 w-full z-50 backdrop-blur-xl nav-bg border-b transition-colors duration-300">
+        <div class="max-w-6xl mx-auto px-6 h-16 flex items-center justify-between">
+            
+            <!-- Pure CSS "S" Logo + Title -->
+            <a href="#hero" class="flex items-center gap-3 group">
+                <div class="css-s-logo group-hover:scale-105 transition duration-300">
+                    <span class="s-ribbon ribbon-top"></span>
+                    <span class="s-ribbon ribbon-bottom"></span>
+                </div>
+                <span class="text-base font-bold tracking-tight nav-logo">S Portfolio</span>
+            </a>
+            
+            <div class="flex items-center gap-6">
+                <div class="hidden md:flex space-x-8 text-xs font-medium nav-links tracking-wide uppercase">
+                    <a href="#hero" class="hover-link transition-colors duration-200">Home</a>
+                    <a href="#skills" class="hover-link transition-colors duration-200">Skills</a>
+                    <a href="#resume" class="hover-link transition-colors duration-200">Resume</a>
+                    <a href="#contact" class="hover-link transition-colors duration-200">Contact</a>
+                </div>
+
+                <!-- Theme Toggle Button -->
+                <button id="theme-toggle" class="p-2 rounded-full theme-toggle-btn transition-all duration-300" aria-label="Toggle Theme">
+                    <i data-lucide="sun" id="theme-icon-sun" class="w-4 h-4 hidden"></i>
+                    <i data-lucide="moon" id="theme-icon-moon" class="w-4 h-4"></i>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="hero" class="min-h-screen flex items-center justify-center pt-24 pb-16 px-6 max-w-6xl mx-auto relative">
+        <div class="grid lg:grid-cols-12 gap-12 items-center w-full">
+            
+            <div class="lg:col-span-7 text-left" data-aos="fade-right" data-aos-duration="1000">
+                <span class="inline-flex items-center gap-2 px-3.5 py-1.5 text-xs font-medium status-pill rounded-full border backdrop-blur-md">
+                    <span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
+                    Available for Software Engineering Roles
+                </span>
+                <h1 class="mt-6 text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight hero-title leading-[1.1]">
+                    Welcome to my little Website Portfolio! <br/>
+                    <span class="bg-gradient-to-r from-indigo-300 via-slate-100 to-cyan-300 bg-clip-text text-transparent hero-gradient-text">
+                        Browse all you want.
+                    </span>
+                </h1>
+                <p class="mt-5 text-base sm:text-lg sub-text max-w-xl font-normal leading-relaxed">
+                    Working Computer Science Student & Developer building high-performance web software with clean code with a touch of modern aesthetics.
+                </p>
+                <div class="mt-8 flex flex-wrap gap-4">
+                    <a href="#skills" class="btn-primary">Explore Arsenal</a>
+                    <a href="#contact" class="btn-secondary">Get in Touch</a>
+                </div>
+            </div>
+
+            <!-- Polaroid Card -->
+            <div class="lg:col-span-5 flex justify-center" data-aos="fade-left" data-aos-duration="1000">
+                <div id="polaroid-wrapper" class="polaroid-wrapper">
+                    <div id="polaroid-card" class="polaroid-card">
+                        <div class="polaroid-img-box">
+                            <img id="polaroid-img" src="images/personal.jpg" alt="Portfolio Profile">
+                        </div>
+                        <div class="polaroid-caption">
+                            <span id="polaroid-name">Anthony Samar</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Split-Screen Skills Section -->
+    <section id="skills" class="py-32 px-6 max-w-6xl mx-auto border-t section-border">
+        <div class="grid lg:grid-cols-12 gap-12 items-start">
+            
+            <div class="lg:col-span-5 sticky-sidebar space-y-6" data-aos="fade-right">
+                <div>
+                    <span class="text-xs font-semibold text-indigo-400 uppercase tracking-widest section-subtitle">Capabilities</span>
+                    <h2 class="text-3xl md:text-4xl font-extrabold section-title tracking-tight mt-2">Technical Arsenal</h2>
+                    <p class="sub-text mt-3 text-sm leading-relaxed">
+                        A streamlined showcase of technologies tuned for optimal efficiency and maintainability.
+                    </p>
+                </div>
+
+                <div class="relative">
+                    <i data-lucide="search" class="w-4 h-4 search-icon absolute left-4 top-1/2 -translate-y-1/2"></i>
+                    <input type="text" id="skill-search" placeholder="Search technologies..." class="input-glass pl-11">
+                </div>
+
+                <div class="flex flex-wrap gap-2">
+                    <button onclick="filterSkills('all')" class="skill-tab pill-btn pill-active">All</button>
+                    <button onclick="filterSkills('languages')" class="skill-tab pill-btn">Languages</button>
+                    <button onclick="filterSkills('frameworks')" class="skill-tab pill-btn">Frameworks</button>
+                    <button onclick="filterSkills('tools')" class="skill-tab pill-btn">Tools & DB</button>
+                </div>
+            </div>
+
+            <div class="lg:col-span-7 grid sm:grid-cols-2 gap-4" id="skills-grid" data-aos="fade-up">
+                <div class="skill-card group glass-card" data-category="languages" data-name="typescript">
+                    <div class="icon-wrapper icon-indigo"><i data-lucide="code-2" class="w-5 h-5"></i></div>
+                    <div><h3 class="font-semibold card-title text-sm">Python</h3><span class="text-xs card-sub">Language</span></div>
+                </div>
+                <div class="skill-card group glass-card" data-category="languages" data-name="javascript">
+                    <div class="icon-wrapper icon-indigo"><i data-lucide="file-code" class="w-5 h-5"></i></div>
+                    <div><h3 class="font-semibold card-title text-sm">JavaScript</h3><span class="text-xs card-sub">Language</span></div>
+                </div>
+                <div class="skill-card group glass-card" data-category="languages" data-name="java">
+                    <div class="icon-wrapper icon-indigo"><i data-lucide="terminal" class="w-5 h-5"></i></div>
+                    <div><h3 class="font-semibold card-title text-sm">Java</h3><span class="text-xs card-sub">Language</span></div>
+                </div>
+                <div class="skill-card group glass-card" data-category="frameworks" data-name="tailwind css">
+                    <div class="icon-wrapper icon-cyan"><i data-lucide="layout" class="w-5 h-5"></i></div>
+                    <div><h3 class="font-semibold card-title text-sm">Tailwind CSS v4</h3><span class="text-xs card-sub">Framework</span></div>
+                </div>
+                <div class="skill-card group glass-card" data-category="tools" data-name="git github">
+                    <div class="icon-wrapper icon-cyan"><i data-lucide="git-branch" class="w-5 h-5"></i></div>
+                    <div><h3 class="font-semibold card-title text-sm">Git & GitHub</h3><span class="text-xs card-sub">Tools</span></div>
+                </div>
+                <div class="skill-card group glass-card" data-category="tools" data-name="sql database">
+                    <div class="icon-wrapper icon-cyan"><i data-lucide="database" class="w-5 h-5"></i></div>
+                    <div><h3 class="font-semibold card-title text-sm">SQL Databases</h3><span class="text-xs card-sub">Database</span></div>
+                </div>
+                <div class="skill-card group glass-card" data-category="frameworks" data-name="react">
+                    <div class="icon-wrapper icon-cyan"><i data-lucide="cpu" class="w-5 h-5"></i></div>
+                    <div><h3 class="font-semibold card-title text-sm">React</h3><span class="text-xs card-sub">Framework</span></div>
+                </div>
+                <div class="skill-card group glass-card" data-category="tools" data-name="vs code">
+                    <div class="icon-wrapper icon-cyan"><i data-lucide="monitor" class="w-5 h-5"></i></div>
+                    <div><h3 class="font-semibold card-title text-sm">VS Code</h3><span class="text-xs card-sub">Tool</span></div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Resume Section -->
+    <section id="resume" class="py-32 px-6 max-w-6xl mx-auto border-t section-border">
+        <div class="flex flex-col md:flex-row md:items-end justify-between mb-12 gap-6" data-aos="fade-up">
+            <div>
+                <span class="text-xs font-semibold text-indigo-400 uppercase tracking-widest section-subtitle">Background</span>
+                <h2 class="text-3xl md:text-4xl font-extrabold section-title tracking-tight mt-2">Resume & Experience</h2>
+            </div>
+            <a href="assets/resume.pdf" download class="btn-primary inline-flex items-center gap-2 self-start md:self-auto">
+                <i data-lucide="download" class="w-4 h-4"></i> Download CV
+            </a>
+        </div>
+
+        <div class="grid md:grid-cols-2 gap-8" data-aos="fade-up">
+            <div class="glass-form space-y-6">
+                <div class="flex items-center gap-3">
+                    <div class="icon-wrapper icon-indigo"><i data-lucide="graduation-cap" class="w-6 h-6"></i></div>
+                    <h3 class="text-xl font-bold card-title">Education</h3>
+                </div>
+                <div class="border-l-2 border-indigo-500/30 pl-4 space-y-2">
+                    <span class="text-xs font-semibold text-indigo-400">CAVITE STATE UNIVERSITY (2023 — Present)</span>
+                    <h4 class="font-bold card-title text-base">B.S. in Computer Science</h4>
+                    <p class="sub-text text-sm">Focusing on object-oriented programming, data structures, algorithm design, and software engineering principles.</p>
+                </div>
+            </div>
+
+            <div class="glass-form space-y-6">
+                <div class="flex items-center gap-3">
+                    <div class="icon-wrapper icon-cyan"><i data-lucide="briefcase" class="w-6 h-6"></i></div>
+                    <h3 class="text-xl font-bold card-title">Experience & Projects</h3>
+                </div>
+                <div class="border-l-2 border-cyan-500/30 pl-4 space-y-2">
+                    <span class="text-xs font-semibold text-cyan-400">2024 — Present</span>
+                    <h4 class="font-bold card-title text-base">Omni-channel Customer Service Associate (2025 - Present)</h4>
+                    <p class="sub-text text-sm"><li>Handled live chat, email, and phone queues while meeting response targets. </li> 
+                    <li>Identified system bugs and logged detailed Jira tickets with steps to reproduce for devs. </li> </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-32 px-6 max-w-6xl mx-auto border-t section-border">
+        <div class="text-center mb-16" data-aos="fade-up">
+            <span class="text-xs font-semibold text-indigo-400 uppercase tracking-widest section-subtitle">Connect</span>
+            <h2 class="text-3xl md:text-4xl font-extrabold section-title tracking-tight mt-2">Get In Touch</h2>
+            <p class="sub-text mt-2 text-sm">Have a project idea or inquiry? Reach out directly via social links or send a message.</p>
+        </div>
+
+        <div class="grid lg:grid-cols-12 gap-12 items-center">
+            
+            <div class="lg:col-span-5 flex flex-col items-center text-center space-y-8" data-aos="fade-right">
+                
+               <div class="w-full space-y-3">
+                <span class="text-xs font-semibold uppercase tracking-wider text-indigo-400 block mb-2">Direct Socials</span>
+                    <div class="flex justify-center gap-4">
+                         <!-- Facebook Direct Link -->
+                         <a href="https://web.facebook.com/anthony.carinalsamar" target="_blank" rel="noopener noreferrer" class="social-btn group" title="Facebook">
+                             <svg class="w-5 h-5 fill-slate-300 group-hover:fill-white transition" viewBox="0 0 24 24">
+                            <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/>
+                        </svg>
+                    <span class="text-xs font-semibold">Facebook</span>
+                     </a>
+
+                 <!-- Instagram Direct Link -->
+            <a href="https://www.instagram.com/_spidernoir/" target="_blank" rel="noopener noreferrer" class="social-btn group" title="Instagram">
+            <svg class="w-5 h-5 fill-slate-300 group-hover:fill-white transition" viewBox="0 0 24 24">
+                <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
+            </svg>
+            <span class="text-xs font-semibold">Instagram</span>
+                        </a>
+                     </div>
+                </div>
+
+                <div id="character-wrapper" class="character-wrapper relative">
+                    <div class="sparks-container">
+                        <span class="spark-particle spark-1"></span>
+                        <span class="spark-particle spark-2"></span>
+                        <span class="spark-particle spark-3"></span>
+                        <span class="spark-particle spark-4"></span>
+                        <span class="spark-particle spark-5"></span>
+                        <span class="spark-particle spark-6"></span>
+                    </div>
+
+                    <div id="character-card" class="character-card">
+                        <div class="character-img-box">
+                            <img src="images/Doom.gif" alt="Character Banner Figure" class="character-img">
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="lg:col-span-7" data-aos="fade-left">
+                <form id="contact-form" action="https://formspree.io/f/mljjqnqr" method="POST" class="glass-form space-y-6" data-aos="fade-up">
+                    <div class="grid md:grid-cols-2 gap-6">
+                        <div>
+                            <label class="form-label">Name</label>
+                            <input type="text" id="name" required placeholder="John Doe" class="input-glass">
+                        </div>
+                        <div>
+                            <label class="form-label">Email</label>
+                            <input type="email" id="email" required placeholder="john@example.com" class="input-glass">
+                        </div>
+                    </div>
+                    <div>
+                        <label class="form-label">Message</label>
+                        <textarea id="message" rows="4" required placeholder="Write your message..." class="input-glass resize-none"></textarea>
+                    </div>
+                    <button type="submit" class="btn-submit">
+                        <i data-lucide="send" class="w-4 h-4"></i> Send Message
+                    </button>
+                    <div id="form-success" class="hidden text-center text-sm text-emerald-400 font-medium bg-emerald-500/10 border border-emerald-500/20 py-3 rounded-xl">
+                        Message sent successfully!
+                    </div>
+                </form>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="border-t section-border py-8 text-center text-xs footer-text tracking-wide">
+        <p>© 2026 Samar Portfolio. All rights reserved.</p>
+    </footer>
+
+    <!-- AOS JS & Lucide Initialization -->
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script>
+        AOS.init({ once: true });
+        lucide.createIcons();
+    </script>
+    <!-- Custom JS File -->
+    <script src="js/main.js"></script>
+</body>
+</html>

@@ -1,0 +1,169 @@
+:root {
+    --bg-main: #020617;
+    --text-primary: #ffffff;
+    --text-secondary: #94a3b8;
+    --nav-bg: rgba(2, 6, 23, 0.6);
+    --border-color: rgba(255, 255, 255, 0.1);
+    --orb-top: rgba(99, 102, 241, 0.15);
+    --orb-bottom: rgba(8, 145, 178, 0.10);
+    --btn-primary-bg: #ffffff;
+    --btn-primary-text: #020617;
+    --btn-secondary-bg: rgba(255, 255, 255, 0.05);
+    --btn-secondary-text: #e2e8f0;
+}
+
+body.light-mode {
+    --bg-main: #6c92a7;
+    --text-primary: #0f2330;
+    --text-secondary: #27495e;
+    --nav-bg: rgba(209, 228, 237, 0.75);
+    --border-color: rgba(39, 73, 94, 0.18);
+    --orb-top: rgba(255, 255, 255, 0.45);
+    --orb-bottom: rgba(140, 180, 200, 0.5);
+    --btn-primary-bg: #153243;
+    --btn-primary-text: #ffffff;
+    --btn-secondary-bg: rgba(255, 255, 255, 0.35);
+    --btn-secondary-text: #0f2330;
+}
+
+body {
+    background-color: var(--bg-main);
+    color: var(--text-primary);
+    transition: background-color 400ms ease, color 400ms ease;
+}
+
+/* --- PURE CSS RECREATION OF THE "S" RIBBON LOGO --- */
+.css-s-logo {
+    position: relative;
+    width: 30px;
+    height: 32px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.s-ribbon {
+    position: absolute;
+    width: 24px;
+    height: 16px;
+    border-style: solid;
+    border-width: 6px;
+    border-radius: 12px;
+}
+
+.ribbon-top {
+    top: 0;
+    left: 0;
+    border-color: #94a3b8 #94a3b8 transparent transparent;
+    border-bottom-right-radius: 0;
+    transform: rotate(-15deg);
+}
+
+.ribbon-bottom {
+    bottom: 0;
+    right: 0;
+    border-color: transparent transparent #0284c7 #0284c7;
+    border-top-left-radius: 0;
+    transform: rotate(-15deg);
+}
+
+body.light-mode .ribbon-top {
+    border-color: #1e293b #1e293b transparent transparent;
+}
+
+body.light-mode .ribbon-bottom {
+    border-color: transparent transparent #0369a1 #0369a1;
+}
+
+.bg-orb {
+    position: fixed;
+    width: 600px;
+    height: 600px;
+    border-radius: 9999px;
+    filter: blur(140px);
+    pointer-events: none;
+    transition: background-color 400ms ease;
+}
+
+.orb-top {
+    top: -10%;
+    left: -10%;
+    background-color: var(--orb-top);
+}
+
+.orb-bottom {
+    bottom: -10%;
+    right: -10%;
+    background-color: var(--orb-bottom);
+}
+
+.nav-bg {
+    background-color: var(--nav-bg);
+    border-color: var(--border-color);
+}
+
+.nav-logo, .hero-title, .section-title, .card-title {
+    color: var(--text-primary);
+}
+
+.sub-text, .card-sub, .footer-text, .search-icon {
+    color: var(--text-secondary);
+}
+
+.nav-links a {
+    color: var(--text-secondary);
+}
+.nav-links a:hover {
+    color: var(--text-primary);
+}
+
+.section-border {
+    border-color: var(--border-color);
+}
+
+.btn-primary {
+    padding: 0.875rem 1.5rem;
+    border-radius: 9999px;
+    background-color: var(--btn-primary-bg);
+    color: var(--btn-primary-text);
+    font-weight: 600;
+    font-size: 0.875rem;
+    transition: all 300ms ease;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+}
+
+.btn-primary:hover {
+    transform: scale(1.02);
+    opacity: 0.95;
+}
+
+.btn-secondary {
+    padding: 0.875rem 1.5rem;
+    border-radius: 9999px;
+    background-color: var(--btn-secondary-bg);
+    color: var(--btn-secondary-text);
+    font-weight: 600;
+    font-size: 0.875rem;
+    border: 1px solid var(--border-color);
+    backdrop-filter: blur(12px);
+    transition: all 300ms ease;
+}
+
+.btn-secondary:hover {
+    transform: scale(1.02);
+}
+
+.status-pill {
+    color: var(--text-primary);
+    background-color: var(--btn-secondary-bg);
+    border-color: var(--border-color);
+}
+
+.theme-toggle-btn {
+    background-color: var(--btn-secondary-bg);
+    color: var(--text-primary);
+    border: 1px solid var(--border-color);
+}
+.theme-toggle-btn:hover {
+    transform: scale(1.08);
+}
